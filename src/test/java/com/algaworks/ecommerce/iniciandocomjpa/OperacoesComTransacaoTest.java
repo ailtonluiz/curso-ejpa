@@ -118,7 +118,7 @@ public class OperacoesComTransacaoTest extends EntityManagerTest {
 
     @Test
     public void removerObjeto() {
-        Produto produto = entityManager.find(Produto.class, 3);
+        Produto produto = entityManager.find(Produto.class, 3L);
 
         entityManager.getTransaction().begin();
         entityManager.remove(produto);

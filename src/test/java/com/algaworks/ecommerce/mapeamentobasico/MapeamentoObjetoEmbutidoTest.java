@@ -15,7 +15,7 @@ public class MapeamentoObjetoEmbutidoTest extends EntityManagerTest {
 
     @Test
     public void analisarMapeamentoObjetoEmbutido() {
-        Cliente cliente = entityManager.find(Cliente.class, 1L);
+        Cliente cliente = entityManager.find(Cliente.class, 1);
 
         EnderecoEntregaPedido endereco = new EnderecoEntregaPedido();
         endereco.setCep("00000-00");
@@ -26,7 +26,8 @@ public class MapeamentoObjetoEmbutidoTest extends EntityManagerTest {
         endereco.setEstado("MG");
 
         Pedido pedido = new Pedido();
-        pedido.setDataPedido(LocalDateTime.now());
+        // pedido.setId(1); Comentado porque estamos utilizando IDENTITY
+        pedido.setDataCriacao(LocalDateTime.now());
         pedido.setStatus(StatusPedido.AGUARDANDO);
         pedido.setTotal(new BigDecimal(1000));
         pedido.setEnderecoEntrega(endereco);

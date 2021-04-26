@@ -13,7 +13,7 @@ public class IniciarUnidadeDePersistencia {
                 .createEntityManagerFactory("Ecommerce-PU");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-        Produto produto = entityManager.find(Produto.class, 1L);
+        Produto produto = entityManager.find(Produto.class, 1);
         System.out.println(produto.getNome());
 
         entityManager.close();

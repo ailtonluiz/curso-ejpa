@@ -27,7 +27,7 @@ public class PrimeiroCrudTest extends EntityManagerTest {
 
     @Test
     public void busarPorIdentificador() {
-        Produto produto = entityManager.find(Produto.class, 1);
+        Produto produto = entityManager.find(Produto.class, 1L);
 
         Assert.assertNotNull(produto);
         Assert.assertEquals("Kindle", produto.getNome());
@@ -52,7 +52,7 @@ public class PrimeiroCrudTest extends EntityManagerTest {
 
     @Test
     public void removerRegistro() {
-        Cliente cliente = entityManager.find(Cliente.class, 2);
+        Cliente cliente = entityManager.find(Cliente.class, 2L);
 
         entityManager.getTransaction().begin();
         entityManager.remove(cliente);

@@ -1,11 +1,13 @@
 package com.algaworks.ecommerce.model;
 
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
 @Table(name = "estoque")
@@ -20,5 +22,5 @@ public class Estoque {
     @JoinColumn(name = "produto_id")
     private Produto produto;
 
-    private Integer quantidade;
+    private Long quantidade;
 }

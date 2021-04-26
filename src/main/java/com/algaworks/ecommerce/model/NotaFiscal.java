@@ -1,12 +1,15 @@
 package com.algaworks.ecommerce.model;
 
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
 @Table(name = "nota_fiscal")
@@ -19,6 +22,9 @@ public class NotaFiscal {
 
     @OneToOne(optional = false)
     @JoinColumn(name = "pedido_id")
+//    @JoinTable(name = "pedido_nota_fiscal",
+//            joinColumns = @JoinColumn(name = "nota_fiscal_id", unique = true),
+//            inverseJoinColumns = @JoinColumn(name = "pedido_id", unique = true))
     private Pedido pedido;
 
     private String xml;
